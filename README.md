@@ -12,3 +12,9 @@
     <img src="more_samples.png" alt="more samples">
     <p>The figure above shows more samples for the comparison among original, vanilla-generated and diverse images on four well known datasets.</p>
 </div>
+
+- We calculate diverse samples (DS) as depicted below:
+
+<div align="center">
+    <img src="ds_flowchart.png" alt="Diverse samples Solver">
+</div>
