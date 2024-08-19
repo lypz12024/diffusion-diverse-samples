@@ -26,3 +26,10 @@
     <p>The figure above shows the number of diverse images present in 50,000 generated samples on four well known datasets with each of the solver.</p>
 </div>
 
+<div align="center">
+    <img src="chest_x-ray_results.png" alt="Results on Chest x-ray dataset">
+    <p>The figure above shows Chest X-ray dataset and its class-wise classification accuracy results on the test set with ResNet50 model. OI Acc
+denotes classification accuracy with original images, VGS Acc denotes classification accuracy with vanilla-generated samples, and DS Acc denotes classification accuracy with
+diverse samples. The last column shows the change in accuracy with diverse samples over original images.</p>
+</div>
+
