@@ -18,3 +18,11 @@
 <div align="center">
     <img src="ds_flowchart.png" alt="Diverse samples Solver">
 </div>
+
+### Results
+
+<div align="center">
+    <img src="count_diverse_samples.png" alt="Number of diverse samples">
+    <p>The figure above shows the number of diverse images present in 50,000 generated samples on four well known datasets with each of the solver.</p>
+</div>
+
