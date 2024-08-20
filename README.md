@@ -19,11 +19,11 @@
     <img src="ds_flowchart.png" alt="Diverse samples Solver">
 </div>
 
-- First, we generated 50,000 images on CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms datasets with the below code
+- First, we generated 50,000 images on CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms datasets with the below code from [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion)
 ```shell script
 sample_diffusion.py
 ``` 
-- We calculated diverse samples as per the code mentioned bleow:
+- Then, we calculated diverse samples as per the code mentioned bleow:
 ```shell script
 ds_sqnet.py
 ``` 
