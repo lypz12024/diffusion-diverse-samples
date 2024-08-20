@@ -157,7 +157,7 @@ def main(folder1, folder2, output_dir, batch_size):
     print(f"Number of generated images outside the boundary of real images: {outside_count}")
 
     # Save the images that are outside the boundary in the output directory
-    outside_images_dir = os.path.join(output_dir, 'outside_images')
+    outside_images_dir = os.path.join(output_dir, 'diverse_images')
     os.makedirs(outside_images_dir, exist_ok=True)
 
     print("Saving images outside the boundary...")
