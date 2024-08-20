@@ -47,7 +47,7 @@ ds_sqnet.py
 pip install transformers==4.19.2 scann kornia==0.6.4 torchmetrics==0.6.0
 pip install git+https://github.com/arogozhnikov/einops.git
 ```
-- To generate images for datasets on CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms, we utilized the codes and pre-trained weights from [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion). We wused the the following script:
+- To generate images for datasets on CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms, we utilized the codes and pre-trained weights from [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion). We also referred to this link to download the training images for all these datasets. We used the the following script to generate images:
 
 ```shell script
 python sample_diffusion.py -r <path for model.ckpt> -l <output directory for sampled images> -n <number of samples to be generated> --batch_size <batch size> -c <number of inference steps> -e <eta>
@@ -66,4 +66,14 @@ python ds_sqnet.py <directory_of_real_images> <directory_of_generated_images> <d
 ```shell script
 python ds_sqnet.py /train_data/celebahq /generated_samples/celebahq /outputs/celebahq --batch_size 1000
 ```
+- The following script is used to train the ResNet50 model for image classification on the Chest X-ray dataset [https://www.cell.com/cell/fulltext/S0092-8674(18)30154-5](https://www.cell.com/cell/fulltext/S0092-8674(18)30154-5), separately using real, generated, and diverse samples:
+  
+```shell script
+python chest_img_classifier_train.py
+```
+- The resulting weights from the script above are then applied in the script below to evaluate accuracy and save all results into a CSV file.
+```shell script
+python chest_img_classifier_test.py
+```
+
 
