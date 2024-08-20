@@ -62,7 +62,7 @@ python sample_diffusion.py -r /models/ldm/celeba256/model.ckpt -l /generated_sam
   
 - To calaulate the number of diverse samples from the generated images, use:
   ```shell script
-python ds_sqnet.py <directory of real images> <directory of generated images> <directory of outputs> --batch_size 1000
+python ds_sqnet.py <directory_of_real_images> <directory_of_generated_images> <directory_of_outputs> --batch_size 1000
 ```
 - Example to calculate diverse samples of CelebAHQ dataset:
 ```shell script
