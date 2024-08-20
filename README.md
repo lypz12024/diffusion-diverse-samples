@@ -19,7 +19,10 @@
     <img src="ds_flowchart.png" alt="Diverse samples Solver">
 </div>
 
-### Usage
+- First, we generated 50,000 images on CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms datasets with the below code
+```shell script
+sample_diffusion.py
+``` 
 - We calculated diverse samples as per the code mentioned bleow:
 ```shell script
 ds_sqnet.py
@@ -35,4 +38,34 @@ ds_sqnet.py
 <div align="center">
     <img src="chest_x-ray_results.png" alt="Results on Chest x-ray dataset">
 </div>
+
+### Implementation
+  
+- Set up a conda environment and install below libraries:
+
+```shell script
+pip install transformers==4.19.2 scann kornia==0.6.4 torchmetrics==0.6.0
+pip install git+https://github.com/arogozhnikov/einops.git
+```
+
+- To generate unconditional images for datasets like CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms, use:
+
+```shell script
+python sample_diffusion.py -r <path for model.ckpt> -l <output directory for sampled images> -n <number of samples to be generated> --batch_size <batch size> -c <number of inference steps> -e <eta>
+```
+
+- Example to generate samples of CelebAHQ dataset:
+```shell script
+python sample_diffusion.py -r /models/ldm/celeba256/model.ckpt -l /generated_samples/celebahq -n 50000 --batch_size 100 -c 8 -e 0
+```
+- We utilized the pre-trained models weights of LDMs (Latent diffusion models) from  [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion).
+  
+- To calaulate the number of diverse samples from the generated images, use:
+  ```shell script
+python ds_sqnet.py <directory of real images> <directory of generated images> <directory of outputs> --batch_size 1000
+```
+- Example to calculate diverse samples of CelebAHQ dataset:
+```shell script
+python ds_sqnet.py /train_data/celebahq /generated_samples/celebahq /outputs/celebahq --batch_size 1000
+```
 
