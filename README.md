@@ -19,6 +19,12 @@
     <img src="ds_flowchart.png" alt="Diverse samples Solver">
 </div>
 
+### Usage
+- We calculated diverse samples as per the code mentioned bleow:
+```shell script
+ds_sqnet.py
+``` 
+
 ### Results
 - The figure below shows the number of diverse images present in 50,000 generated samples on four well known datasets with each of the solver
 <div align="center">
