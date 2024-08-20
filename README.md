@@ -57,7 +57,7 @@ python sample_diffusion.py -r <path for model.ckpt> -l <output directory for sam
 python sample_diffusion.py -r /models/ldm/celeba256/model.ckpt -l /generated_samples/celebahq -n 50000 --batch_size 100 -c 8 -e 0
 ```
   
-- To calaulate the number of diverse samples from the generated images and to save t-SNE plots, use:
+- To calculate the number of diverse samples from the generated images and to save the t-SNE plot along with the diverse images, use:
   
 ```shell script
 python ds_sqnet.py <directory_of_real_images> <directory_of_generated_images> <directory_of_outputs> --batch_size 1000
