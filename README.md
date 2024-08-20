@@ -47,7 +47,6 @@ ds_sqnet.py
 pip install transformers==4.19.2 scann kornia==0.6.4 torchmetrics==0.6.0
 pip install git+https://github.com/arogozhnikov/einops.git
 ```
-
 - To generate unconditional images for datasets like CelebAHQ, FFHQ, LSUN Churches, and LSUN Bedrooms, use:
 
 ```shell script
@@ -58,10 +57,10 @@ python sample_diffusion.py -r <path for model.ckpt> -l <output directory for sam
 ```shell script
 python sample_diffusion.py -r /models/ldm/celeba256/model.ckpt -l /generated_samples/celebahq -n 50000 --batch_size 100 -c 8 -e 0
 ```
-- We utilized the pre-trained models weights of LDMs (Latent diffusion models) from  [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion).
+- We utilized the pre-trained models weights of LDMs (Latent diffusion models) from  [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion) to generate images.
   
 - To calaulate the number of diverse samples from the generated images, use:
-  ```shell script
+```shell script
 python ds_sqnet.py <directory_of_real_images> <directory_of_generated_images> <directory_of_outputs> --batch_size 1000
 ```
 - Example to calculate diverse samples of CelebAHQ dataset:
